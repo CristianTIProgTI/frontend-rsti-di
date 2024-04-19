@@ -1,0 +1,29 @@
+/*Estilo para o título principal (h1)*/
+h1{
+    color:#333; /*Cor do texto */
+    font-family: Arial, sans-serif; /*Fonte do texto*/
+}
+
+/*Estilo para parágrafos (p) */
+p{
+    font-size: 16px; /*Tamanho da fonte*/
+    line-height: 1.4; /*Espaçamento entre linhas*/
+}
+
+/*Estilo para a imagem*/
+img{
+    max-width: 30%; /*Largura máxima da imagem*/
+    height: auto; /*Altura automática proporcional*/
+    margin: 20px 0; /*Margem superior e inferior*/
+}
+
+/*Estilo para links (a)*/
+a{
+    color: #0070cc; /*Cor do link*/
+    text-decoration: none; /*Remover sublinhado padrão*/
+}
+
+/*Estilo para links quando o mouse passa por cima (hover)*/
+a:hover{
+    text-decoration: underline; /*Sublinhado ao passar o mouse*/
+}
