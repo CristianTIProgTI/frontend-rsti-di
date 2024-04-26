@@ -1,0 +1,21 @@
+body{
+    background-color: lightgoldenrodyellow;
+    color: chocolate;
+    font-size: 12pt;
+    font-family: Arial;
+}
+
+
+/*Estilo para o título principal (h1)*/
+h1{
+    color:brown; /*Cor do texto */
+    
+}
+
+
+/*Estilo para links (a)*/
+a{
+    color: brown; /*Cor do link*/
+    text-decoration: none;
+}
+
