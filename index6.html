@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Aula DOM-Eventos</title>
+    
+</head>
+
+<body>
+    <div class="container">
+    
+    </div>
+    
+    <br><br>
+    <p>Ver Aula 17 - DOM-Eventos</p>
+    <p><br></p>
+    <a href="1-pagina_ini.html">⬅ Página Inicial</a>
+
+</body>
+    
+    <script>
+    
+    
+    
+    function main (){
+    const paragraph = document.createElement('p');
+    paragraph.textContent = 'Este é um parágrafo criado dinamicamente.';
+    
+    const anchor = document.createElement('a');
+    anchor.textContent = 'Este é um link criado dinamicamente';
+    anchor.href = 'https://example.com';
+    
+    const image = document.createElement('img');
+    image.src = 'https://via.placeholder.com/150&#39';
+    image.alt = 'Imagem de demonstração criada dinamicamente';
+    
+    const list = document.createElement('ul');
+    
+    const listItem1 = document.createElement('li');
+    listItem1.textContent = 'Item 1';
+    const listItem2 = document.createElement('li');
+    listItem2.textContent = 'Item 2';
+    
+    list.append(listItem1, listItem2);
+    
+    // Seleciona a div container
+    const container = document.querySelector('.container');
+    
+    // Adiciona os elementos criados à div container
+    container.append(paragraph, anchor, image, list);
+    
+    }
+    main ()
+    </script>
+
+
+    
+   

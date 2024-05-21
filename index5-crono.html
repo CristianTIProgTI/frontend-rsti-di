@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Cronômetro</title>
+    
+</head>
+
+<body>
+    <div class="container">
+    <h1><time>00:00:00</time></h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="reset">reset</button>
+    </div>
+    
+    <br><br>
+    <p>Ver Aula 17 - DOM</p>
+    <p><br></p>
+    <a href="1-pagina_ini.html">⬅ Página Inicial</a>
+
+</body>
+    
+    <script>
+    
+    var body = document.getElementsByTagName("body");
+    var start = document.getElementById("start");
+    var stop = document.getElementById("stop");
+    var reset = document.getElementById("reset");
+    var timer = document.getElementsByTagName("time");
+    
+    var tempo = 1;
+    var ativo = false;
+    var minuto = 0;
+    var hora = 0;
+    
+    start.addEventListener('click', funcaoStart);
+    stop.addEventListener('click', funcaoStop);
+    reset.addEventListener('click', funcaoreset);
+    
+    
+    function funcaoStart() {
+    ativo = true;
+    funcaotimer();
+    //main();
+    }
+    function funcaoStop(){
+    ativo = false;
+    }
+    function funcaoreset(){
+    ativo = false;
+    tempo = 0;
+    timer[0].innerText = tempo;
+    }
+    function funcaotimer(){
+    
+    if(tempo >=6){
+    minuto ++;
+    tempo = 0;
+    }
+    if(minuto >=6){
+    hora ++;
+    minuto = 0;
+    }
+    if(ativo){
+    var seg;
+    var min;
+    var hor;
+    if(tempo <10){seg = "0" + tempo;}else{seg = tempo;}
+    if(minuto <10){min = "0" + minuto;}else{min = minuto;}
+    if(hora <10){hor = "0" + hora;}else{hor = hora;}
+    timer[0].innerText = hor + ":" + min + ":" + seg;
+    tempo = tempo + 1
+    setTimeout(funcaotimer, 1000);
+    
+    }
+    }
+    
+    
+    </script>
+
+
+    
+   
