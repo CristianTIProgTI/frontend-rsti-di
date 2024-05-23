@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Registro e Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .registro {
+            background-color: #e0f7fa;
+        }
+        .login {
+            background-color: #fce4ec;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #mensagemErro, #mensagemSucesso {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #mensagemErro {
+            color: red;
+        }
+        #mensagemSucesso {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container registro">
+        <h1>Registro</h1>
+        <form id="formRegistro">
+            <input type="email" id="registroEmail" placeholder="Novo Email" required>
+            <input type="password" id="registroSenha" placeholder="Nova Senha" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <div id="mensagemSucesso"></div>
+    </div>
+    <div class="container login">
+        <h1>Login</h1>
+        <form id="formLogin">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginSenha" placeholder="Senha" required>
+            <button type="submit">Login</button>
+        </form>
+        <div id="mensagemErro"></div>
+    </div>
+    <script>
+        let emailCorreto = ""; // Inicializa variáveis para armazenar o email registrado
+        let senhaCorreta = ""; // Inicializa variáveis para armazenar a senha registrada
+
+        // Função para limpar os campos do formulário
+        function limparFormulario(form) {
+            form.reset(); // Limpa todos os campos do formulário
+        }
+
+        // Adiciona um ouvinte de evento ao formulário de registro para lidar com o envio
+        document.getElementById('formRegistro').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            emailCorreto = document.getElementById('registroEmail').value; // Obtém o valor do campo de email do registro
+            senhaCorreta = document.getElementById('registroSenha').value; // Obtém o valor do campo de senha do registro
+            document.getElementById('mensagemSucesso').textContent = "Registro realizado com sucesso!"; // Exibe mensagem de sucesso
+            limparFormulario(event.target); // Limpa o formulário de registro
+        });
+
+        // Adiciona um ouvinte de evento ao formulário de login para lidar com o envio
+        document.getElementById('formLogin').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var email = document.getElementById('loginEmail').value; // Obtém o valor do campo de email do login
+            var senha = document.getElementById('loginSenha').value; // Obtém o valor do campo de senha do login
+            var mensagemErro = document.getElementById('mensagemErro'); // Seleciona o elemento de mensagem de erro
+
+            // Verifica se o email e a senha estão corretos
+            if (email === emailCorreto && senha === senhaCorreta) {
+                mensagemErro.textContent = ""; // Limpa a mensagem de erro
+                alert("Login realizado com sucesso!"); // Exibe um alerta de sucesso
+            } else {
+                mensagemErro.textContent = "Email ou senha incorretos."; // Define o texto da mensagem de erro
+            }
+            limparFormulario(event.target); // Limpa o formulário de login
+        });
+    </script>
+</body>
+</html>

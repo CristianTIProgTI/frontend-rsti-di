@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Envio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #mensagem {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Envie seu Formulário</h1>
+        <form id="meuFormulario">
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="mensagem"></div>
+    </div>
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function(event) { //Seleciona o elemento com o ID 'meuFormulario' e...
+                                                // ... Adiciona um ouvinte de eventos ao formulário que executa a função fornecida quando o evento 'submit' é disparado.
+            event.preventDefault(); // Impede a ação padrão do evento. Para formulários, isso significa impedir o envio e recarregamento da página.
+            document.getElementById('mensagem').textContent = "Formulário enviado com sucesso!"; //Seleciona o elemento com o ID 'mensagem' e define seu conteúdo de texto para "Formulário enviado com sucesso!".
+        });
+    </script>
+</body>
+</html>

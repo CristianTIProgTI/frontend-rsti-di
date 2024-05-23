@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pseudo-elementos</title>
+    <style>
+        .decorado::before {
+            content: "➤ "; /* Insere um símbolo de seta antes do conteúdo */
+            color: red; /* Define a cor da seta como vermelha */
+        }
+        
+        .notificacao::after {
+            content: " (Novo)"; /* Insere o texto "(Novo)" após o conteúdo */
+            color: green; /* Define a cor do texto como verde */
+            font-weight: bold; /* Deixa o texto em negrito */
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Pseudo-elementos</h1>
+    <p class="decorado">Este é um parágrafo com um símbolo antes.</p>
+    <p class="notificacao">Você tem uma mensagem</p>
+</body>
+</html>
