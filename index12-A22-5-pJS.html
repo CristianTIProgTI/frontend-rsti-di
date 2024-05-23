@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Parágrafo com JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="conteudo"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() { // Adiciona um ouvinte de evento para o evento DOMContentLoaded 
+        //(DOMContentLoaded: Evento que dispara quando o documento HTML inicial foi completamente carregado e analisado, sem esperar que folhas de estilo, imagens e subframes terminem de carregar.)
+        const conteudo = document.getElementById("conteudo"); // Obtém o elemento com o ID "conteudo" (Método que retorna uma referência ao elemento pelo seu ID especificado.)
+        const paragrafo = document.createElement("p"); // Cria um novo elemento de parágrafo <p>
+        paragrafo.textContent = "Este é um parágrafo criado com JavaScript"; // Define o texto do parágrafo
+        conteudo.appendChild(paragrafo); // Adiciona o novo parágrafo como filho do elemento com o ID "conteudo"
+    });
+</script>
+
+</body>
+</html>

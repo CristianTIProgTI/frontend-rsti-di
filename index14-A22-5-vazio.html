@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Criação de Elementos</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    const elementoPai = document.createElement("div"); //Cria um novo elemento <div> e o armazena na variável elementoPai.
+    elementoPai.classList.add("container"); //Adiciona a classe container ao elemento <div> criado.
+    const titulo = document.createElement("h1"); //Cria um novo elemento <h1> e o armazena na variável titulo.
+    titulo.textContent = "Título Criado com JavaScript"; //Define o texto do elemento <h1> para "Título Criado com JavaScript".
+    const paragrafo = document.createElement("p"); //Cria um novo elemento <p> e o armazena na variável paragrafo.
+    paragrafo.textContent = "Este parágrafo também foi criado com JavaScript"; //Define o texto do elemento <p> para "Este parágrafo também foi criado com JavaScript".
+    elementoPai.appendChild(titulo); //Adiciona o elemento <h1> como filho do <div> com a classe container.
+    elementoPai.appendChild(paragrafo); //Adiciona o elemento <p> como filho do <div> com a classe container.
+    document.body.appendChild(elementoPai); //Adiciona o <div> com seus filhos (<h1> e <p>) ao final do elemento <body>.
+</script>
