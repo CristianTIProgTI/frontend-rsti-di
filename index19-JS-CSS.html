@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS CSS</title>
+</head>
+<body>
+    <style>
+        .box {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          transition: width 1s, height 1s, background-color 1s;
+        }
+        .box:hover {
+          width: 200px;
+          height: 200px;
+          background-color: blue;
+        }
+      </style>
+      <div class="box">Passe o mouse para alterar</div>
+<p><br></p>
+      <button onclick="createImage()">Criar Imagem</button>
+<div id="imageContainer"></div>
+<script>
+  function createImage() {
+    const imgElement = document.createElement('img');
+    imgElement.src = 'https://via.placeholder.com/150';
+    imgElement.alt = 'Imagem de exemplo';
+    imgElement.width = 150;
+    imgElement.height = 150;
+    const container = document.getElementById('imageContainer');
+    container.appendChild(imgElement);
+  }
+</script>
+</body>
+</html>

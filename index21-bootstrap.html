@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        :root{
+          --bs-border-color: blue;
+        }
+      </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+              </ul>
+            </header>
+          </div>
+    </header>
+    <main>
+        <section class="row d-flex flex-column flex-md-row mx-auto my-2 p-2 border justify-content-center gap-1">
+            <div class="col-1 col-md-3 border">1</div>
+            <div class="col-2 col-md-2 border">2</div>
+            <div class="col-3 col-md-1 border">3</div>
+        </section>
+        <section class=" row gap-2 p-4 border border-dark border-5 bg-secondary text-white ">
+            <div class="col-2 col-md-2 p-1 border bg-success text-black fw-bold" >BOLD</div>
+            <div class="col-2 col-md-2 p-1 border bg-success text-red fst-italic" >ITALIC</div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
