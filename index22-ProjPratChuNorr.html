@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Prático JavaScript</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>Projeto Prático JavaScript</h1>
+  <div id="animationContainer"></div>
+  <form id="jokeForm">
+    <label for="firstName">Nome:</label>
+    <input type="text" id="firstName" name="firstName">
+    <button type="submit">Buscar piada</button>
+  </form>
+  <div id="jokeContainer"></div>
+
+  <script>
+    function main() {
+  console.log('DOM carregado. Iniciando script...');
+
+  // Criando elementos HTML dinamicamente
+  const animationContainer = document.getElementById('animationContainer');
+  const box = document.createElement('div');
+  box.classList.add('box');
+  animationContainer.appendChild(box);
+  // Configurando animação para o elemento
+  animateElement(box);
+
+  // Tratando o formulário
+  const jokeForm = document.getElementById('jokeForm');
+  jokeForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const firstName = document.getElementById('firstName').value;
+    fetchJoke(firstName);
+  });
+}
+
+function animateElement(element) {
+  let position = 0;
+  const moveAmount = 2;
+
+  function move() {
+    if (position >= 200) {
+      return;
+    }
+    position += moveAmount;
+    element.style.left = position + 'px';
+    requestAnimationFrame(move);
+  }
+
+  move();
+}
+
+async function fetchJoke(firstName) {
+  try {
+    const response = await fetch(`https://api.chucknorris.io/jokes/random?firstName=${firstName}`);
+    if (!response.ok) {
+      throw new Error('Erro ao buscar piada');
+    }
+    const jokeData = await response.json();
+    displayJoke(jokeData.value);
+  } catch (error) {
+    console.error('Erro ao buscar piada:', error.message);
+  }
+}
+
+function displayJoke(joke) {
+  const jokeContainer = document.getElementById('jokeContainer');
+  jokeContainer.innerHTML = `<p>${joke}</p>`;
+}
+
+// Iniciando o script quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', main);
+
+
+
+
+  </script>
+</body>
+</html>
+
